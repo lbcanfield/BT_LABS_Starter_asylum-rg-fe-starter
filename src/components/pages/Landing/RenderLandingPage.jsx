@@ -3,6 +3,10 @@ import React from 'react';
 import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
 import GrantRatesByNationalityImg from '../../../styles/Images/pie-chart-no-text.png';
 import GrantRatesOverTimeImg from '../../../styles/Images/line-graph-no-text.png';
+
+//Landing Page Data Import
+import { landingPageData } from './index.js';
+
 import HrfPhoto from '../../../styles/Images/paper-stack.jpg';
 import '../../../styles/RenderLandingPage.less';
 import { Button } from 'antd';
@@ -17,7 +21,6 @@ function RenderLandingPage(props) {
   };
 
   const history = useHistory();
-
   return (
     <div className="main">
       <div className="header">
@@ -90,7 +93,21 @@ function RenderLandingPage(props) {
       </div>
       <div>
         {/* Bottom Section: Add code here for the graphs section for your first ticket */}
-        {/* <div className="bottom-section">*/}
+        <div className="bottom-section">
+          <div className="bottom-section-header">
+            <h1>Systemic Disparity Insights</h1>
+          </div>
+          <div className="bottom-section-element-container">
+            {landingPageData.map(data => {
+              return (
+                <div className="bottom-section-element">
+                  <h2>{data.value}</h2>
+                  <p>{data.info}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
         <p onClick={() => scrollToTop()} className="back-to-top">
           Back To Top ^
         </p>
