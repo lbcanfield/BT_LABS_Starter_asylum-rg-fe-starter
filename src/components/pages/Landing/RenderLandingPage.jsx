@@ -37,24 +37,18 @@ function RenderLandingPage(props) {
       {/* Graphs Section: Add code here for the graphs section for your first ticket */}
       <div className="graphs-section">
         <div className="graph-section-element">
-          <img
-            src={GrantRatesByOfficeImg}
-            alt="Search Grant Rates By Office Image"
-          />
+          <img src={GrantRatesByOfficeImg} alt="Search Grant Rates By Office" />
           <h2>Search Grants Rates By Office</h2>
         </div>
         <div className="graph-section-element">
           <img
             src={GrantRatesByNationalityImg}
-            alt="Search Grant Rates By Nationality Image"
+            alt="Search Grant Rates By Nationality"
           />
           <h2>Search Grants Rates By Nationality</h2>
         </div>
         <div className="graph-section-element">
-          <img
-            src={GrantRatesOverTimeImg}
-            alt="Search Grant Rates Over Time Image"
-          />
+          <img src={GrantRatesOverTimeImg} alt="Search Grant Rates Over Time" />
           <h2>Search Grants Rates Over Time</h2>
         </div>
       </div>
@@ -95,18 +89,25 @@ function RenderLandingPage(props) {
         {/* Bottom Section: Add code here for the graphs section for your first ticket */}
         <div className="bottom-section">
           <div className="bottom-section-header">
-            <h1>Systemic Disparity Insights</h1>
+            <p>Systemic Disparity Insights</p>
           </div>
           <div className="bottom-section-element-container">
             {landingPageData.map(data => {
               return (
                 <div className="bottom-section-element">
-                  <h2>{data.value}</h2>
-                  <p>{data.info}</p>
+                  <p className="value">{data.value}</p>
+                  <p className="info">{data.info}</p>
                 </div>
               );
             })}
           </div>
+          <Button
+            type="default"
+            style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
+            // onClick={() => history.push('/graphs')}
+          >
+            Read More
+          </Button>
         </div>
         <p onClick={() => scrollToTop()} className="back-to-top">
           Back To Top ^
